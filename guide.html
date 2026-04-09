@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GYM PRO â User Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Heebo:wght@400;500;7guide.html00&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0d0f14;--card:#161920;--card2:#1c1f28;--border:#ffffff12;--accent:#c8f135;--text:#e8e8e8;--muted:#888;--radius:14px}
+body{font-family:'Heebo',Arial,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;direction:ltr}
+
+/* Header */
+.header{background:#111420;border-bottom:1px solid var(--border);padding:20px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-family:'Bebas Neue',Impact,sans-serif;font-size:26px;color:var(--accent);letter-spacing:3px}
+.header-tag{background:rgba(200,241,53,.1);border:1px solid rgba(200,241,53,.2);color:var(--accent);font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;letter-spacing:1px}
+.launch-btn{background:var(--accent);color:#000;font-family:'Heebo',Arial,sans-serif;font-weight:700;font-size:14px;padding:10px 22px;border-radius:10px;text-decoration:none;transition:.15s;border:none;cursor:pointer}
+.launch-btn:hover{opacity:.85}
+
+/* Hero */
+.hero{text-align:center;padding:64px 24px 48px}
+.hero-eyebrow{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.hero-title{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(48px,10vw,80px);color:var(--accent);letter-spacing:4px;line-height:1;margin-bottom:16px}
+.hero-sub{font-size:17px;color:var(--muted);max-width:460px;margin:0 auto 32px;line-height:1.7}
+.hero-cta{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#000;font-family:'Heebo',Arial,sans-serif;font-weight:700;font-size:16px;padding:14px 32px;border-radius:12px;text-decoration:none;transition:.15s}
+.hero-cta:hover{opacity:.85}
+.hero-cta svg{width:18px;height:18px}
+
+/* Steps */
+.steps{max-width:680px;margin:0 auto;padding:0 24px 80px;display:flex;flex-direction:column;gap:16px}
+.section-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:8px}
+
+.step{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;transition:.2s}
+.step:hover{border-color:rgba(200,241,53,.2)}
+.step-head{display:flex;align-items:flex-start;gap:14px;margin-bottom:12px}
+.step-num{width:32px;height:32px;border-radius:50%;background:rgba(200,241,53,.1);border:1px solid rgba(200,241,53,.25);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:16px;color:var(--accent);flex-shrink:0;margin-top:2px}
+.step-title{font-size:16px;font-weight:700;color:var(--text);line-height:1.3}
+.step-emoji{font-size:16px;margin-right:6px}
+.step-body{font-size:14px;color:var(--muted);line-height:1.8;padding-left:46px}
+.step-body strong{color:#ccc;font-weight:500}
+.step-body code{background:var(--card2);border:1px solid var(--border);padding:1px 7px;border-radius:6px;font-size:13px;font-family:monospace;color:var(--accent)}
+
+/* Code block */
+.code-block{background:#0a0c11;border:1px solid var(--border);border-radius:10px;padding:14px 16px;font-size:12px;font-family:monospace;color:#888;line-height:1.9;margin:10px 0 0 46px;overflow-x:auto}
+.code-block .key{color:var(--accent)}
+.code-block .comment{color:#444}
+
+/* Badges */
+.badges{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0 0 46px}
+.badge{background:rgba(200,241,53,.08);border:1px solid rgba(200,241,53,.18);border-radius:20px;padding:4px 12px;font-size:12px;color:#aaa}
+.badge b{color:var(--accent)}
+.badge-gold{background:rgba(255,200,0,.1);border-color:rgba(255,200,0,.25);color:#ffc800}
+.badge-orange{background:rgba(255,160,0,.1);border-color:rgba(255,160,0,.25);color:#ffa000}
+.badge-blue{background:rgba(77,166,255,.1);border-color:rgba(77,166,255,.25);color:#4da6ff}
+.badge-green{background:rgba(80,200,100,.1);border-color:rgba(80,200,100,.25);color:#50c864}
+
+/* Tips */
+.tips-box{background:var(--card2);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;margin-top:4px}
+.tips-title{font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.tip{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px}
+.tip:last-child{margin-bottom:0}
+.tip-dot{width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:7px}
+.tip-text{font-size:13px;color:var(--muted);line-height:1.7}
+.tip-text strong{color:#bbb;font-weight:500}
+
+/* CTA bottom */
+.bottom-cta{text-align:center;padding:48px 24px 80px}
+.bottom-cta p{font-size:14px;color:var(--muted);margin-bottom:20px}
+
+/* Footer */
+.footer{border-top:1px solid var(--border);padding:24px;text-align:center;font-size:12px;color:#444}
+.footer a{color:var(--muted);text-decoration:none}
+.footer a:hover{color:var(--accent)}
+
+@media(max-width:600px){
+  .header{padding:14px 16px}
+  .header-tag{display:none}
+  .hero{padding:40px 16px 32px}
+  .steps{padding:0 16px 60px}
+  .step-body,.code-block,.badges{padding-left:0}
+  .code-block,.badges{margin-left:0}
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo">GYM PRO</div>
+  <div class="header-tag">USER GUIDE</div>
+  <a href="./index.html" class="launch-btn">Open App â</a>
+</div>
+
+<div class="hero">
+  <div class="hero-eyebrow">Welcome to</div>
+  <div class="hero-title">GYM PRO</div>
+  <p class="hero-sub">The no-nonsense workout tracker that fits in a single file. No ads. No sign-up. No nonsense. Just you and your gainz.</p>
+  <a href="./index.html" class="hero-cta">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    Launch the app
+  </a>
+</div>
+
+<div class="steps">
+  <div class="section-label">How it works</div>
+
+  <!-- Step 1 -->
+  <div class="step">
+    <div class="step-head">
+      <div class="step-num">1</div>
+      <div class="step-title">Load your workout plan</div>
+    </div>
+    <div class="step-body">
+      Hit the glowing <strong>Load Plan</strong> button at the top. A text box drops down â paste your workout in plain text. No spreadsheets, no apps, no â¬9.99/month subscriptions. Just words. The app parses it automatically and builds your workout cards like magic.
+    </div>
+    <div class="code-block">
+<span class="comment"># Block 1</span>
+<span class="key">Workout A</span> â Chest + Legs
+Combined strength session
+* Bench Press: <span class="key">4 sets, 8-10 reps</span>
+* Squat: <span class="key">4 sets, 6 reps</span>
+
+<span class="comment"># Block 2 (separated by a blank line)</span>
+<span class="key">Workout B</span> â Arms
+Superset for arms
+superset
+* Bicep Curl: <span class="key">3 sets, 10-12 reps</span>
+* Tricep Extension: <span class="key">3 sets, 10-12 reps</span>
+    </div>
+  </div>
+
+  <!-- Step 2 -->
+  <div class="step">
+    <div class="step-head">
+      <div class="step-num">2</div>
+      <div class="step-title">Navigate between workout days</div>
+    </div>
+    <div class="step-body">
+      Each workout block becomes a <strong>tab</strong> at the top. Tap to switch between days. A tiny progress counter (e.g. <strong>3/8</strong>) appears on each tab as you complete exercises â because nothing is more satisfying than watching that number climb while everyone else is still warming up.
+    </div>
+  </div>
+
+  <!-- Step 3 -->
+  <div class="step">
+    <div class="step-head">
+      <div class="step-num">3</div>
+      <div class="step-title">Track sets, reps & weight</div>
+    </div>
+    <div class="step-body">
+      Each exercise card shows its sets and reps. Pick your weight from the dropdown â it saves automatically, so next session you won't play the <em>"wait, was it 40kg or 45?"</em> guessing game. When you're done with an exercise, smash the <strong>Done</strong> button. It fades out. Deeply satisfying.
+    </div>
+    <div class="badges">
+      <span class="badge">Sets: <b>4</b></span>
+      <span class="badge">Reps: <b>8â10</b></span>
+      <span class="badge">Chest</span>
+      <span class="badge">Weight â¾</span>
+    </div>
+  </div>
+
+  <!-- Step 4 -->
+  <div class="step">
+    <div class="step-head">
+      <div class="step-num">4</div>
+      <div class="step-title">Supersets â for the overachievers</div>
+    </div>
+    <div class="step-body">
+      Add a line that says <code>superset</code> before two exercises and they get highlighted in gold â like royalty, but sweatier. The app knows they belong together. No one gets left behind.
+    </div>
+    <div class="badges">
+      <span class="badge-gold">Superset</span>
+      <span class="badge">Bicep Curl</span>
+      <span class="badge">Tricep Extension</span>
+    </div>
+  </div>
+
+  <!-- Step 5 -->
+  <div class="step">
+    <div class="step-head">
+      <div class="step-num">5</div>
+      <div class="step-title">Power weeks â when you're feeling heroic</div>
+    </div>
+    <div class="step-body">
+      If your plan has different reps for weeks 1â3 vs. week 4/8, a toggle appears automatically. Flip it to <strong>Power Week</strong> and all the numbers update instantly. The cards glow orange to remind you this is not the day for half-reps.
+    </div>
+    <div class="badges">
+      <span class="badge">Weeks 1â3</span>
+      <span class="badge-orange">ð¥ Power Week 4/8</span>
+    </div>
+  </div>
+
+  <!-- Step 6 -->
+  <div class="step">
+    <div class="step-head">
+      <div class="step-num">6</div>
+      <div class="step-title">YouTube & images â form matters</div>
+    </div>
+    <div class="step-body">
+      Every exercise card has a <strong>YouTube</strong> button and an <strong>Images</strong> button. Not sure what a "Romanian Deadlift" actually looks like? One tap and you're watching a tutorial â before you quietly pull something in your lower back.
+    </div>
+    <div class="badges">
+      <span style="background:rgba(255,64,64,.1);border:1px solid rgba(255,64,64,.2);border-radius:20px;padding:4px 12px;font-size:12px;color:#ff6464">â¶ YouTube</span>
+      <span class="badge-blue">ð¼ Images</span>
+    </div>
+  </div>
+
+  <!-- Step 7 -->
+  <div class="step">
+    <div class="step-head">
+      <div class="step-num">7</div>
+      <div class="step-title">Switch languages â HE / EN</div>
+    </div>
+    <div class="step-body">
+      See the <strong>HE | EN</strong> toggle in the top corner? One tap switches the entire interface between Hebrew and English â including page direction (RTL / LTR). Your preference is remembered forever. Well, until you clear your browser data. But let's be optimistic.
+    </div>
+    <div class="badges">
+      <span class="badge-green">HE â</span>
+      <span class="badge">EN</span>
+    </div>
+  </div>
+
+  <!-- Step 8 -->
+  <div class="step">
+    <div class="step-head">
+      <div class="step-num">8</div>
+      <div class="step-title">Install it like a real app</div>
+    </div>
+    <div class="step-body">
+      On your phone, a banner pops up offering to add GYM PRO to your home screen. Tap <strong>Install</strong>. Now it lives on your home screen â no App Store, no updates, no 200MB download. Just a lean, mean, workout-tracking machine. Works offline too. Gym WiFi optional (we know how gym WiFi goes).
+    </div>
+  </div>
+
+  <!-- Tips -->
+  <div class="tips-box">
+    <div class="tips-title">Pro tips</div>
+    <div class="tip">
+      <div class="tip-dot"></div>
+      <div class="tip-text">Progress <strong>resets every day</strong> automatically â because yesterday's workout doesn't count for today.</div>
+    </div>
+    <div class="tip">
+      <div class="tip-dot"></div>
+      <div class="tip-text">Your <strong>weights are saved forever</strong> â no need to re-enter them every session.</div>
+    </div>
+    <div class="tip">
+      <div class="tip-dot"></div>
+      <div class="tip-text">Separate workout blocks with a <strong>blank line</strong> â that's how the app knows where one day ends and the next begins.</div>
+    </div>
+    <div class="tip">
+      <div class="tip-dot"></div>
+      <div class="tip-text">Exercises for abs? The app automatically <strong>hides the weight picker</strong> for core work. You're welcome.</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="bottom-cta">
+  <p>That's all there is to it. Now stop reading and go lift something heavy.</p>
+  <a href="./index.html" class="hero-cta">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:18px;height:18px"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    Open GYM PRO
+  </a>
+</div>
+
+<div class="footer">
+  <a href="https://github.com/t1ptip/gym-pro">View on GitHub</a> &nbsp;Â·&nbsp; GYM PRO v2
+</div>
+
+</body>
+</html>
